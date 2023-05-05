@@ -1,0 +1,10 @@
+name: Test
+
+on:
+  workflow_dispatch:
+
+job:
+  test:
+    runs-on: ubuntu-20.04
+    steps:
+      - sh: echo "hello, world"  
