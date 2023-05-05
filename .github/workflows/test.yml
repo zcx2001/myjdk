@@ -14,13 +14,22 @@ jobs:
           - java_ver: "11"
             tag: "11"
     steps:
-      - run: echo "${{ matrix.java_ver }} - ${{ matrix.tag }}"  
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
       - name: Setup Docker buildx
         uses: docker/setup-buildx-action@v2
+
+      - name: Login Registry
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       - name: Build and push Docker image
         uses: docker/build-push-action@v4
         with:
+          push: true
           build-args: |
             JAVA_VER=${{ matrix.java_ver }}
           tags: |
