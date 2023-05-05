@@ -6,5 +6,12 @@ on:
 jobs:
   test:
     runs-on: ubuntu-20.04
+    strategy:
+      matrix:
+        include:
+          - site: "production"
+            datacenter: "site-a"
+          - site: "staging"
+            datacenter: "site-b"
     steps:
-      - run: echo "hello, world"  
+      - run: echo "${{ matrix.site }} - ${{ matrix.datacenter }}"  
