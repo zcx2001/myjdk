@@ -7,4 +7,4 @@ jobs:
   test:
     runs-on: ubuntu-20.04
     steps:
-      - sh: echo "hello, world"  
+      - run: echo "hello, world"  
