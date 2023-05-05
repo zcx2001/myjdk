@@ -16,6 +16,10 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
+      
+      - name: Get date
+        id: date
+        run: echo "::set-output name=today::$(date +'%y%m%d')"
 
       - name: Setup Docker buildx
         uses: docker/setup-buildx-action@v2
@@ -33,4 +37,4 @@ jobs:
           build-args: |
             JAVA_VER=${{ matrix.java_ver }}
           tags: |
-            zcx2001/myjdk:${{ matrix.tag }}
+            zcx2001/myjdk:${{ matrix.tag }}-{{ steps.date.outputs.today }}
