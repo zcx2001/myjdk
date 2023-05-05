@@ -1,7 +1,10 @@
-name: Test
+name: Docker Publish
 
 on:
-  workflow_dispatch:
+  push:
+  schedule:
+    - cron: '* * 1,15 * *'  
+
 
 jobs:
   test:
