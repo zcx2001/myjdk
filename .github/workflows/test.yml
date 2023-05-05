@@ -3,7 +3,7 @@ name: Test
 on:
   workflow_dispatch:
 
-job:
+jobs:
   test:
     runs-on: ubuntu-20.04
     steps:
