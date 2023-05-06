@@ -43,6 +43,7 @@ jobs:
           platforms: linux/amd64,linux/arm64
           build-args: |
             JAVA_VER=${{ matrix.java_ver }}
+            RUNNER=github
           tags: |
             zcx2001/myjdk:${{ matrix.tag }}-${{ steps.date.outputs.today }}
-            zcx2001/myjdk:${{ matrix.tag }}-latest
+            zcx2001/myjdk:latest-${{ matrix.tag }}
