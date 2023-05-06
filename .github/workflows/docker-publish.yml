@@ -24,6 +24,9 @@ jobs:
         id: date
         run: echo "::set-output name=today::$(date +'%y%m%d')"
 
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v2
+
       - name: Setup Docker buildx
         uses: docker/setup-buildx-action@v2
 
@@ -37,6 +40,7 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           push: true
+          platforms: linux/amd64,linux/arm64
           build-args: |
             JAVA_VER=${{ matrix.java_ver }}
           tags: |
