@@ -3,8 +3,7 @@ name: Docker Publish
 on:
   push:
   schedule:
-    - cron: '* * 1,15 * *'  
-
+    - cron: '* * 1,7,15 * *'  
 
 jobs:
   test:
