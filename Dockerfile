@@ -14,7 +14,7 @@ ENV LC_ALL en_US.UTF-8
 COPY --from=hengyunabc/arthas:latest /opt/arthas /opt/arthas
 
 # 增加常用中文字体
-ADD font/. /usr/share/fonts/chinese
+ADD fonts/. /usr/share/fonts/chinese
 
 RUN if [ "${RUNNER}" != "github" ]; then \
         sed -i -E 's/(archive|security|ports).ubuntu.(org|com)/mirrors.aliyun.com/g' /etc/apt/sources.list; \
