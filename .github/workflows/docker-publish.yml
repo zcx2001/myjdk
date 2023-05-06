@@ -45,3 +45,4 @@ jobs:
             JAVA_VER=${{ matrix.java_ver }}
           tags: |
             zcx2001/myjdk:${{ matrix.tag }}-${{ steps.date.outputs.today }}
+            zcx2001/myjdk:${{ matrix.tag }}-latest
