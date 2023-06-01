@@ -20,7 +20,7 @@ RUN if [ "${RUNNER}" != "github" ]; then \
         sed -i -E 's/(archive|security|ports).ubuntu.(org|com)/mirrors.aliyun.com/g' /etc/apt/sources.list; \
     fi \    
     && apt-get update && apt-get upgrade -y  \
-    && apt-get install -y --no-install-recommends\
+    && apt-get install -y --no-install-recommends \
         ca-certificates \
         locales \
         tzdata \
