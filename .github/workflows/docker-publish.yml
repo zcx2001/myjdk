@@ -17,6 +17,8 @@ jobs:
             tag: "8"
           - java_ver: "11"
             tag: "11"
+          - java_ver: "17"
+            tag: "17"
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
