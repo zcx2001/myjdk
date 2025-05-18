@@ -6,9 +6,9 @@ ARG RUNNER=local
 ENV DEBIAN_FRONTEND=noninteractive
 
 # 修正中文显示
-ENV LANG en_US.UTF-8
-ENV LANGUAGE en_US:en
-ENV LC_ALL en_US.UTF-8
+ENV LANG=en_US.UTF-8
+ENV LANGUAGE=en_US:en
+ENV LC_ALL=en_US.UTF-8
 
 # 安装arthas
 COPY --from=hengyunabc/arthas:latest /opt/arthas /opt/arthas
