@@ -1,4 +1,4 @@
-FROM ubuntu:22.04
+FROM ubuntu:24.04
 
 ARG JAVA_VER=1.8.0
 ARG RUNNER=local
@@ -18,6 +18,7 @@ ADD fonts/. /usr/share/fonts/chinese
 
 RUN if [ "${RUNNER}" != "github" ]; then \
         sed -i -E 's/(archive|security|ports).ubuntu.(org|com)/mirrors.aliyun.com/g' /etc/apt/sources.list; \
+        sed -i -E 's/(archive|security|ports).ubuntu.(org|com)/mirrors.aliyun.com/g' /etc/apt/sources.list.d/ubuntu.sources; \
     fi \    
     && apt-get update && apt-get upgrade -y  \
     && apt-get install -y --no-install-recommends \
